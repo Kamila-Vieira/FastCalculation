@@ -1,5 +1,6 @@
 package br.edu.scl.ifsp.sdm.fastcalculation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,7 +10,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.edu.scl.ifsp.sdm.fastcalculation.data.GameResult
 import br.edu.scl.ifsp.sdm.fastcalculation.databinding.ActivityResultBinding
+import br.edu.scl.ifsp.sdm.fastcalculation.fragments.GameFragment
+import br.edu.scl.ifsp.sdm.fastcalculation.interfaces.OnPlayGame
 import br.edu.scl.ifsp.sdm.fastcalculation.utils.Extras
+import br.edu.scl.ifsp.sdm.fastcalculation.utils.Extras.EXTRA_SETTINGS
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var gameResult: GameResult
@@ -42,21 +46,23 @@ class ResultActivity : AppCompatActivity() {
                 pointsValueTv.text = it
             }
             restartBt.setOnClickListener {
-
+                val gameActivityIntent = Intent(this@ResultActivity, GameActivity::class.java)
+                gameResult.settings.isFromRestart = true
+                gameActivityIntent.putExtra(EXTRA_SETTINGS, gameResult.settings)
+                startActivity(gameActivityIntent, Bundle())
+                finish()
             }
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_game, menu)
+        menu?.findItem(R.id.restartGameMi)?.isVisible = false
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){
-            R.id.restartGameMi -> {
-                return true
-            }
             R.id.exitMi -> {
                 finish()
                 return true

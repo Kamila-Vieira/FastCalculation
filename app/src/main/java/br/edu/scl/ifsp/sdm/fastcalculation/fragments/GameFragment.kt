@@ -26,6 +26,7 @@ class GameFragment : Fragment() {
     private var startRoundTime = 0L
     private var totalGameTime = 0L
     private var hits = 0
+    private var playedRounds = 0
     private var roundDeadlineHandler = object : Handler(Looper.getMainLooper()){
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
@@ -85,6 +86,7 @@ class GameFragment : Fragment() {
     private fun play(){
         currentRound = calculationGame.nextRound()
         if (currentRound != null) {
+            playedRounds++
             fragmentGameBinding.apply {
                 "Round: ${currentRound!!.round}/${settings.rounds}".also {
                     roundTv.text = it
@@ -97,12 +99,15 @@ class GameFragment : Fragment() {
             startRoundTime = System.currentTimeMillis()
             roundDeadlineHandler.sendEmptyMessageDelayed(MSG_ROUND_DEADLINE, settings.roundsInterval)
         }else{
-            val points = hits * 10f / (totalGameTime / 1000L)
-            val gameResult = GameResult(points, settings)
-            val resultActivityIntent = Intent(context, ResultActivity::class.java)
+            if(playedRounds == settings.rounds && activity != null) {
+                val points = hits * 10f / (totalGameTime / 1000L)
+                val gameResult = GameResult(points, settings)
+                val resultActivityIntent = Intent(activity, ResultActivity::class.java)
 
-            resultActivityIntent.putExtra(EXTRA_RESULT, gameResult)
-            startActivity(resultActivityIntent)
+                resultActivityIntent.putExtra(EXTRA_RESULT, gameResult)
+                startActivity(resultActivityIntent)
+                requireActivity().finish()
+            }
         }
     }
 }

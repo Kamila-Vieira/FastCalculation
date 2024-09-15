@@ -40,10 +40,15 @@ class GameActivity : AppCompatActivity(), OnPlayGame {
         }
 
         settings = intent.getParcelableExtra<Settings>(EXTRA_SETTINGS) ?: Settings()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.gameFl, WelcomeFragment.newInstance(settings))
-            .commit()
+
+        if(settings.isFromRestart){
+            onPlayGame()
+        }else{
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.gameFl, WelcomeFragment.newInstance(settings))
+                .commit()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
