@@ -14,4 +14,6 @@
     <string name="interval_three">3</string>
     <string name="interval_five">5</string>
     <string name="lets_go">Let\'s go</string>
+    <string name="welcome">Welcome</string>
+    <string name="play">Play</string>
 </resources>
