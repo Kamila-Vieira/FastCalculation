@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import br.edu.scl.ifsp.sdm.fastcalculation.R
 import br.edu.scl.ifsp.sdm.fastcalculation.data.Settings
 import br.edu.scl.ifsp.sdm.fastcalculation.databinding.FragmentWelcomeBinding
+import br.edu.scl.ifsp.sdm.fastcalculation.interfaces.OnPlayGame
 import br.edu.scl.ifsp.sdm.fastcalculation.utils.Extras.EXTRA_SETTINGS
 
 class WelcomeFragment : Fragment() {
@@ -32,6 +33,9 @@ class WelcomeFragment : Fragment() {
             .apply {
                 "${getString(R.string.welcome)}, ${settings.playerName}!".also {
                     welcomeTv.text = it
+                }
+                playBt.setOnClickListener {
+                    (context as OnPlayGame).onPlayGame()
                 }
             }
         return fragmentWelcomeBinding.root

@@ -9,10 +9,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.edu.scl.ifsp.sdm.fastcalculation.data.Settings
 import br.edu.scl.ifsp.sdm.fastcalculation.databinding.ActivityGameBinding
+import br.edu.scl.ifsp.sdm.fastcalculation.fragments.GameFragment
 import br.edu.scl.ifsp.sdm.fastcalculation.fragments.WelcomeFragment
+import br.edu.scl.ifsp.sdm.fastcalculation.interfaces.OnPlayGame
 import br.edu.scl.ifsp.sdm.fastcalculation.utils.Extras.EXTRA_SETTINGS
 
-class GameActivity : AppCompatActivity() {
+class GameActivity : AppCompatActivity(), OnPlayGame {
     private val activityGameBinding: ActivityGameBinding by lazy {
         ActivityGameBinding.inflate(layoutInflater)
     }
@@ -52,6 +54,7 @@ class GameActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){
             R.id.restartGameMi -> {
+                onPlayGame()
                 return true
             }
             R.id.exitMi -> {
@@ -60,5 +63,12 @@ class GameActivity : AppCompatActivity() {
             }
             else -> { false }
         }
+    }
+
+    override fun onPlayGame() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.gameFl, GameFragment.newInstance(settings))
+            .commit()
     }
 }
