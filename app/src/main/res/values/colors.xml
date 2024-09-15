@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- https://m3.material.io/theme-builder#/custom -->
+    <!-- Dark colors -->
+    <color name="colorPrimaryDark">#5ddcb5</color>
+    <color name="colorOnPrimaryDark">#00382a</color>
+    <color name="colorPrimaryContainerDark">#00513e</color>
+    <color name="colorOnPrimaryContainerDark">#7bf9d1</color>
+
+    <color name="colorSecondaryDark">#b2ccc1</color>
+    <color name="colorOnSecondaryDark">#1e352d</color>
+    <color name="colorSecondaryContainerDark">#344c43</color>
+    <color name="colorOnSecondaryContainerDark">#cee9dc</color>
+
+    <color name="colorTertiaryDark">#a8cce1</color>
+    <color name="colorOnTertiaryDark">#0c3446</color>
+    <color name="colorTertiaryContainerDark">#274b5d</color>
+    <color name="colorOnTertiaryContainerDark">#c3e8fe</color>
+
+    <color name="backgroundColorDark">#191c1b</color>
+    <color name="colorOnBackgroundDark">#e1e3e0</color>
+    <color name="colorSurfaceDark">#191c1b</color>
+    <color name="colorOnSurfaceDark">#e1e3e0</color>
+
+    <color name="colorOutlineDark">#89938e</color>
+    <color name="colorSurfaceVariantDark">#3f4944</color>
+    <color name="colorOnSurfaceVariantDark">#bfc9c3</color>
+
+<!--    <color name="colorPrimaryDark">#D0BDFE</color>-->
+<!--    <color name="colorOnPrimaryDark">#36265D</color>-->
+<!--    <color name="colorPrimaryContainerDark">#4D3D75</color>-->
+<!--    <color name="colorOnPrimaryContainerDark">#E9DDFF</color>-->
+<!--    -->
+<!--    <color name="colorSecondaryDark">#CCC2DB</color>-->
+<!--    <color name="colorOnSecondaryDark">#332D41</color>-->
+<!--    <color name="colorSecondaryContainerDark">#4A4458</color>-->
+<!--    <color name="colorOnSecondaryContainerDark">#E8DEF8</color>-->
+<!--    -->
+<!--    <color name="colorTertiaryDark">#EFB8C8</color>-->
+<!--    <color name="colorOnTertiaryDark">#4A2532</color>-->
+<!--    <color name="colorTertiaryContainerDark">#633B48</color>-->
+<!--    <color name="colorOnTertiaryContainerDark">#FFD9E2</color>-->
+<!--    -->
+<!--    <color name="colorErrorDark">#FFB4AB</color>-->
+<!--    <color name="colorOnErrorDark">#690005</color>-->
+<!--    <color name="colorErrorContainerDark">#93000A</color>-->
+<!--    <color name="colorOnErrorContainerDark">#FFDAD6</color>-->
+<!--    -->
+<!--    <color name="colorBackgroundDark">#141218</color>-->
+<!--    <color name="colorOnBackgroundDark">#E6E0E9</color>-->
+<!--    <color name="colorSurfaceDark">#141218</color>-->
+<!--    <color name="colorOnSurfaceDark">#E6E0E9</color>-->
+<!--    -->
+<!--    <color name="colorSurfaceVariantDark">#49454E</color>-->
+<!--    <color name="colorOnSurfaceVariantDark">#CAC4CF</color>-->
+<!--    <color name="colorOutlineDark">#948F99</color>-->
+<!--    <color name="colorOutlineVariantDark">#49454E</color>-->
+
+    <!-- Light colors -->
+    <color name="colorPrimary">#006b54</color>
+    <color name="colorOnPrimary">#ffffff</color>
+    <color name="colorPrimaryContainer">#7bf9d1</color>
+    <color name="colorOnPrimaryContainer">#002117</color>
+
+    <color name="colorSecondary">#4b635a</color>
+    <color name="colorOnSecondary">#ffffff</color>
+    <color name="colorSecondaryContainer">#cee9dc</color>
+    <color name="colorOnSecondaryContainer">#082018</color>
+
+    <color name="colorTertiary">#406376</color>
+    <color name="colorOnTertiary">#ffffff</color>
+    <color name="colorTertiaryContainer">#cee9dc</color>
+    <color name="colorOnTertiaryContainer">#cee9dc</color>
+
+    <color name="backgroundColor">#fbfdf9</color>
+    <color name="colorOnBackground">#191c1b</color>
+    <color name="colorSurface">#fbfdf9</color>
+    <color name="colorOnSurface">#191c1b</color>
+
+    <color name="colorOutline">#707974</color>
+    <color name="colorSurfaceVariant">#dbe5df</color>
+    <color name="colorOnSurfaceVariant">#3f4944</color>
+
+<!--    <color name="colorPrimary">#65558F</color>-->
+<!--    <color name="colorOnPrimary">#FFFFFF</color>-->
+<!--    <color name="colorPrimaryContainer">#E9DDFF</color>-->
+<!--    <color name="colorOnPrimaryContainer">#210F47</color>-->
+<!--    -->
+<!--    <color name="colorSecondary">#625B70</color>-->
+<!--    <color name="colorOnSecondary">#FFFFFF</color>-->
+<!--    <color name="colorSecondaryContainer">#E8DEF8</color>-->
+<!--    <color name="colorOnSecondaryContainer">#1E192B</color>-->
+<!--    -->
+<!--    <color name="colorTertiary">#7E5260</color>-->
+<!--    <color name="colorOnTertiary">#FFFFFF</color>-->
+<!--    <color name="colorTertiaryContainer">#FFD9E2</color>-->
+<!--    <color name="colorOnTertiaryContainer">#31101D</color>-->
+<!--    -->
+<!--    <color name="colorError">#BA1A1A</color>-->
+<!--    <color name="colorOnError">#FFFFFF</color>-->
+<!--    <color name="colorErrorContainer">#FFDAD6</color>-->
+<!--    <color name="colorOnErrorContainer">#410002</color>-->
+<!--    -->
+<!--    <color name="colorBackground">#FEF7FF</color>-->
+<!--    <color name="colorOnBackground">#1D1B20</color>-->
+<!--    <color name="colorSurface">#FEF7FF</color>-->
+<!--    <color name="colorOnSurface">#1D1B20</color>-->
+<!--    -->
+<!--    <color name="colorSurfaceVariant">#E7E0EB</color>-->
+<!--    <color name="colorOnSurfaceVariant">#49454E</color>-->
+<!--    <color name="colorOutline">#7A757F</color>-->
+<!--    <color name="colorOutlineVariant">#CAC4CF</color>-->
+      
+</resources>
