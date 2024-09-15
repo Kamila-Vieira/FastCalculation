@@ -1,5 +1,6 @@
 package br.edu.scl.ifsp.sdm.fastcalculation.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,10 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import br.edu.scl.ifsp.sdm.fastcalculation.R
+import br.edu.scl.ifsp.sdm.fastcalculation.ResultActivity
+import br.edu.scl.ifsp.sdm.fastcalculation.data.GameResult
 import br.edu.scl.ifsp.sdm.fastcalculation.data.Settings
 import br.edu.scl.ifsp.sdm.fastcalculation.databinding.FragmentGameBinding
 import br.edu.scl.ifsp.sdm.fastcalculation.utils.CalculationGame
+import br.edu.scl.ifsp.sdm.fastcalculation.utils.Extras.EXTRA_RESULT
 import br.edu.scl.ifsp.sdm.fastcalculation.utils.Extras.EXTRA_SETTINGS
 
 class GameFragment : Fragment() {
@@ -94,14 +97,12 @@ class GameFragment : Fragment() {
             startRoundTime = System.currentTimeMillis()
             roundDeadlineHandler.sendEmptyMessageDelayed(MSG_ROUND_DEADLINE, settings.roundsInterval)
         }else{
-            with(fragmentGameBinding){
-                roundTv.text = getString(R.string.points)
-                val points = hits * 10f / (totalGameTime / 1000L)
-                "%.1f".format(points).also {
-                    questionTv.text = it
-                }
-                alternativesLl.visibility = View.GONE
-            }
+            val points = hits * 10f / (totalGameTime / 1000L)
+            val gameResult = GameResult(points, settings)
+            val resultActivityIntent = Intent(context, ResultActivity::class.java)
+
+            resultActivityIntent.putExtra(EXTRA_RESULT, gameResult)
+            startActivity(resultActivityIntent)
         }
     }
 }

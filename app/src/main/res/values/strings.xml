@@ -23,4 +23,8 @@
     <string name="exit">Exit</string>
     <!-- Game -->
     <string name="points">Points</string>
+    
+   <!-- Result -->
+    <string name="result">Result</string>
+    <string name="restart">Restart</string> 
 </resources>
