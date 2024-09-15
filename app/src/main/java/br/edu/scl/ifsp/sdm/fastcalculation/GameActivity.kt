@@ -1,6 +1,8 @@
 package br.edu.scl.ifsp.sdm.fastcalculation
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -40,5 +42,23 @@ class GameActivity : AppCompatActivity() {
             .beginTransaction()
             .replace(R.id.gameFl, WelcomeFragment.newInstance(settings))
             .commit()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_game, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId){
+            R.id.restartGameMi -> {
+                return true
+            }
+            R.id.exitMi -> {
+                finish()
+                return true
+            }
+            else -> { false }
+        }
     }
 }
